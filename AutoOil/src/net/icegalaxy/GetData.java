@@ -168,8 +168,7 @@ public class GetData implements Runnable
 				
 				try
 				{
-				if (getTimeInt() > 92000)
-				{
+
 					if (Global.getCurrentPoint() - getShortTB().getLatestCandle().getLow() > 
 					(shortTB.getHL(15).getTempHigh() - shortTB.getHL(15).getTempLow()) * 0.5)
 						Global.setRapidRise(true);
@@ -181,7 +180,7 @@ public class GetData implements Runnable
 						Global.setRapidDrop(true);
 					else
 						Global.setRapidDrop(false);
-				}
+				
 				}catch (Exception e)
 				{
 					e.printStackTrace();
@@ -189,8 +188,7 @@ public class GetData implements Runnable
 				
 				try
 				{
-				if (TimePeriodDecider.getTime() >= 91600)
-				{
+
 					if (shortData.periodHigh - getShortTB().getLatestCandle().getLow() > 50
 //							|| longData.periodHigh - getLongTB().getLatestCandle().getLow() > 50 
 							)
@@ -208,7 +206,7 @@ public class GetData implements Runnable
 					}
 					else
 						Global.setHugeDrop(false);
-				}
+				
 				}catch (Exception e)
 				{
 					e.printStackTrace();
@@ -264,22 +262,22 @@ public class GetData implements Runnable
 				// // getSec10TB().getMainDownRail().getSlope());
 				// }
 
-				if (!aohAdded)
-				{
-
-					if (getTimeInt() >= 93000)
-					{
-						Global.setAOL(Global.getDayLow());
-						Global.setAOH(Global.getDayHigh());
-						Global.addLog("AOL: " + Global.getAOL());
-						Global.addLog("AOH: " + Global.getAOH());
-						
-						AOH.position = Global.getAOH();
-						AOL.position = Global.getAOL();
-						
-						aohAdded = true;
-					}
-				}
+//				if (!aohAdded)
+//				{
+//
+//					if (getTimeInt() >= 93000)
+//					{
+//						Global.setAOL(Global.getDayLow());
+//						Global.setAOH(Global.getDayHigh());
+//						Global.addLog("AOL: " + Global.getAOL());
+//						Global.addLog("AOH: " + Global.getAOH());
+//						
+//						AOH.position = Global.getAOH();
+//						AOL.position = Global.getAOL();
+//						
+//						aohAdded = true;
+//					}
+//				}
 
 				if (shortMinutes == Setting.getShortTB())
 				{
@@ -287,7 +285,7 @@ public class GetData implements Runnable
 					if (Global.getOpen() == 0)
 					{
 						Global.setOpen(SPApi.getAPIPrice().Open);
-						Global.addLog("Set open after 91500 at: " + Global.getOpen());
+						Global.addLog("Set open after start time: " + Global.getOpen());
 					}
 
 

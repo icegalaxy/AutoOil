@@ -47,7 +47,7 @@ public class XMLReader
 	public XMLReader(String tradeDate, String filePath)
 	{
 
-		this.tradeDate = tradeDate;
+		this.tradeDate = "Today";
 		this.filePath = filePath;
 		
 		findElementOfToday();

@@ -146,7 +146,7 @@ public class Setting extends JFrame {
 					
 				}
 
-				while (getTime() > 235900 || getTime() < 90001){
+				while (getTime() > 50000 || getTime() < 60000){
 					System.out.println(getTime() + "Sleep for 5 min");
 					try {
 						Thread.sleep(300000);
@@ -224,7 +224,7 @@ public class Setting extends JFrame {
 		XMLWatcher xmlWatcher = new XMLWatcher();
 //		RuleChasing chasing = new RuleChasing(true);
 		
-		Runnable[] r = { gd, tpd, range, breakThrough, xmlWatcher, rebound, sar, rr};
+		Runnable[] r = { gd, tpd, xmlWatcher, rr};
 
 		Thread[] t = new Thread[r.length];
 		for (int i = 0; i < r.length; i++) {

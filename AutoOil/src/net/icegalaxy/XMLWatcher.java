@@ -11,8 +11,8 @@ public class XMLWatcher implements Runnable
 
 	public static IntraDayReader intraDay;
 	XMLReader ohlc;
-	static String intraDayXMLPath = "C:\\Users\\joech\\Dropbox\\TradeData\\Intraday.xml";
-	static String OHLCPath = "C:\\Users\\joech\\Dropbox\\TradeData\\FHIdata.xml";
+	static String intraDayXMLPath = "C:\\Users\\joech\\Dropbox\\TradeOil\\Intraday.xml";
+	static String OHLCPath = "C:\\Users\\joech\\Dropbox\\TradeOil\\CLdata.xml";
 
 	public static double rangeResist = 0;
 	public static double rangeSupport = 0;
@@ -41,7 +41,7 @@ public class XMLWatcher implements Runnable
 	public XMLWatcher()
 	{
 
-		fileModifiedTime = new File("FHIdata.xml").lastModified();
+		fileModifiedTime = new File("CLdata.xml").lastModified();
 
 		intraDay = new IntraDayReader(Global.getToday(), intraDayXMLPath);
 
@@ -80,7 +80,7 @@ public class XMLWatcher implements Runnable
 		while (Global.isRunning())
 		{
 
-			if (GetData.getTimeInt() > 91420 && Global.getOpen() == 0)
+			if (Global.getOpen() == 0)
 			{
 				setOpenPrice();
 				Global.addLog("Open: " + Global.getOpen());
@@ -147,10 +147,10 @@ public class XMLWatcher implements Runnable
 			Global.addLog("Open = 0");
 			sleep(5000);
 
-			if (GetData.getTimeInt() > 91500)
-			{
-				Global.addLog("Fail to set open b4 91500, try again later");
-			}
+//			if (GetData.getTimeInt() > 91500)
+//			{
+//				Global.addLog("Fail to set open b4 91500, try again later");
+//			}
 
 			setOpenPrice();
 		}

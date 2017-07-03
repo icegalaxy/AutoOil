@@ -100,7 +100,7 @@ public class Global {
 		System.out.println(msg);
 		Global.log.append(msg);
 		DB.stringtoFile(Global.log.toString(), "TradeData\\log " + getToday() + ".txt");
-		DB.stringtoFile(Global.log.toString(), "C:\\Users\\joech\\Dropbox\\TradeData\\log" + getToday() + ".txt");
+		DB.stringtoFile(Global.log.toString(), "C:\\Users\\joech\\Dropbox\\TradeOil\\log" + getToday() + ".txt");
 	}
 
 	public static synchronized void clearLog() {

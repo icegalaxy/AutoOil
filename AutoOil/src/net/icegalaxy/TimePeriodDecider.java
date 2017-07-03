@@ -3,23 +3,23 @@ package net.icegalaxy;
 public class TimePeriodDecider implements Runnable
 {
 
-	public final int getReadyTime = 90000;
-	public final int dayOpen = 91459;
-	public final int noonClose = 120001;
-	public final int noonOpen = 125959;
-	public final int dayClose = 163001;
-	public final int nightOpen = 171500;
-	public final int nightClose = 234500;
+	public final int getReadyTime = 54500;
+	public final int dayOpen = 60000;
+	public final int noonClose = 235900;
+	public final int noonOpen = 235900;
+	public final int dayClose = 235900;
+	public final int nightOpen = 235900;
+	public final int nightClose = 235900;
 
-	public final int morningOrderStart = 91500;
-	public final int morningOrderStop = 103000;
-	public final int afternoonOrderStart = 150000;
-	public final int afternoonOrderStop = 160000;
-	public final int nightOrderStart = 231500;
-	public final int nightOrderStop = 231500;
+	public final int morningOrderStart = 60000;
+	public final int morningOrderStop = 233000;
+	public final int afternoonOrderStart = 235900;
+	public final int afternoonOrderStop = 235900;
+	public final int nightOrderStart = 235900;
+	public final int nightOrderStop = 235900;
 
-	public final int forceSell = 162500;
-	public final int forceSell2 = 234000;
+	public final int forceSell = 235800;
+	public final int forceSell2 = 235800;
 	private boolean noonClosed;
 	private boolean noonOpened;
 	private boolean dayClosed;
