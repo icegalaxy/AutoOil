@@ -384,7 +384,7 @@ public class GetData implements Runnable
 	private void getPreviousData()
 	{
 
-		parseSPRecord csv = new parseSPRecord("C:\\Users\\joech\\Dropbox\\TradeData\\SPRecords\\" + Global.getToday() + "\\m1.txt");
+		parseSPRecord csv = new parseSPRecord("C:\\Users\\joech\\Dropbox\\TradeOil\\SPRecord.txt");
 		csv.parseOHLC();
 		
 		int m5Period = 0;
